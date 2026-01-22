@@ -11,7 +11,7 @@ pipeline {
 
         stage("test"){
             steps{
-                echo "Ready for test "
+                echo 'Ready for test $BRANCH_NAME'
             }
         }
 
