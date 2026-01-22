@@ -5,7 +5,7 @@ pipeline {
 
         stage("build"){
             steps{
-                echo "Build"
+                echo "Jenkins in build Var $BRANCH_NAME"
             }
         }
 
