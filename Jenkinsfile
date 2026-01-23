@@ -5,8 +5,8 @@ pipeline {
 
         stage("build"){
             when {
-                expression{
-                    BRANCH_NAME == 'main'
+                expression {
+                    env.BRANCH_NAME == 'main'
                 }
             }
             steps{
