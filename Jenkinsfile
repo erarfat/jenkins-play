@@ -4,6 +4,11 @@ pipeline {
     stages{
 
         stage("build"){
+            when {
+                expression{
+                    BRANCH_NAME == 'main'
+                }
+            }
             steps{
                 echo "Jenkins in build Var "
             }
