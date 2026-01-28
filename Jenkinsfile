@@ -1,24 +1,20 @@
-pipeline {
-    agent any 
+pipeline{
+    agent any
+    environment{
+        version="1.21"
+    }
+    stages {
 
-    stages{
-
-        stage("build"){
-            when {
-                expression {
-                    env.BRANCH_NAME == null
-                }
-            }
+        stage("Build"){
             steps{
-                echo "Jenkins in build Var "
+                echo "Build ${version}"
             }
         }
 
         stage("test"){
             steps{
-                echo "Ready for test ${env.BRANCH_NAME}"
+                echo "Test ${version}"
             }
         }
-
     }
 }
