@@ -11,7 +11,7 @@ pipeline{
                 echo "Build ss---"
                 echo "Build ${version}"
                 echo "===================="
-                sh "Done ${server}"
+                
         }
 
         stage("test"){
