@@ -11,7 +11,6 @@ pipeline{
                 echo "Build ss---"
                 echo "Build ${version}"
                 echo "===================="
-                sh "Build ${server}"
             }
         }
 
