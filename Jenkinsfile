@@ -20,8 +20,8 @@ pipeline{
             steps{
                 echo "Test ${version}"
 
-                withCredentials([usernamePassword(credentials: 'lala' , usernameVariable: USER , passwordVariable: PWD)]){
-                sh "test ${USER}"
+                withCredentials([usernamePassword(credentialsId: 'lala' , usernameVariable: 'USER' , passwordVariable: 'PWD')]){
+                echo "test ${USER}"
             }
             }
         }
