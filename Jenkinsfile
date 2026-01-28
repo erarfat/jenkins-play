@@ -7,6 +7,7 @@ pipeline{
 
         stage("Build"){
             steps{
+                echo "Build ss---"
                 echo "Build ${version}"
             }
         }
