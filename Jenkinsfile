@@ -11,7 +11,8 @@ pipeline{
                 echo "Build ss---"
                 echo "Build ${version}"
                 echo "===================="
-                
+                echo "Build ${server}"
+            }
         }
 
         stage("test"){
@@ -20,5 +21,4 @@ pipeline{
             }
         }
     }
-}
 }
