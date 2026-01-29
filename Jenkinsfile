@@ -1,26 +1,28 @@
 pipeline{
     agent any
-    environment{
-        version="1.21"
-        //server = credentials('lala')
+    parameters{
+        choice(name:'Version' , choices : ['1.1','1.2','1.3'], description: '')
+        booleanParam(name:'Check' , defaultValue : true, description: '')
     }
     stages {
 
         stage("Build"){
+            when{
+                expression{
+                    params.Check
+                }
+            }
             steps{
                 echo "Build ss---"
-                echo "Build ${version}"
                 echo "===================="
+
             }
         }
 
         stage("test"){
             
             steps{
-                echo "Test ${version}"
-
-                withCredentials([usernamePassword(credentialsId: 'lala' , usernameVariable: 'USER' , passwordVariable: 'PWD')]){
-                echo "test ${USER}"
+                echo "Test version --- ${params.Version}"
             }
             }
         }
