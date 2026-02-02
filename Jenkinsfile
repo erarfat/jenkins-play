@@ -43,16 +43,19 @@ pipeline{
             }
         
         stage("Deploy"){
-            input {
-                message "Enter To which ENV to Deploy "      // note that it is message "" not message: ""
-                ok "Done"
-                parameters{
-                    choice(name: "ENV",choices:["Dev","Stage","Prob"], description: "")
-                    choice(name: "Ver",choices:["v0.1","v0.2","v0.3"], description: ""  )
-                }
-            }
+            // input {
+            //     message "Enter To which ENV to Deploy "      // note that it is message "" not message: ""
+            //     ok "Done"
+            //     parameters{
+            //         choice(name: "ENV",choices:["Dev","Stage","Prob"], description: "")
+            //         choice(name: "Ver",choices:["v0.1","v0.2","v0.3"], description: ""  )
+            //     }
+            // }
             steps{
-                echo "Deploying to Env ${ENV} and Version ${Ver}"
+                script{
+                    env.ENV=input message: "To Deploy in ", ok "Done", parameters: [choice(name: "ENV",choices:["Dev","Stage","Prob"], description: "")]
+                }
+                echo "Deploying to Env ${ENV}}"
             }
         }
 
