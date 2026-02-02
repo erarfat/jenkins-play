@@ -25,11 +25,11 @@ pipeline{
         }
 
         stage("Build"){
-            when{
-                expression{
-                    params.Check
-                }
-            }
+            // when{
+            //     expression{
+            //         params.Check
+            //     }
+            // }
             steps{
                 script {
                     gv.build()
