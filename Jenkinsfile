@@ -1,3 +1,4 @@
+def gv
 pipeline{
     agent any
 
@@ -15,6 +16,14 @@ pipeline{
     }
     stages {
 
+        stage("init"){
+            steps{
+                script{
+                    gv = load "script.groovy"
+                }
+            }
+        }
+
         stage("Build"){
             when{
                 expression{
@@ -22,16 +31,18 @@ pipeline{
                 }
             }
             steps{
-                echo "Build ss---"
-                echo "===================="
-
+                script {
+                    gv.build()
+                }
             }
         }
 
         stage("test"){
             
             steps{
-                echo "Test version --- ${params.Version}"
+               script {
+                gv.test()
+               }
             }
             }
         }
