@@ -44,7 +44,7 @@ pipeline{
         
         stage("Deploy"){
             input {
-                message: "Enter To which ENV to Deploy "
+                message "Enter To which ENV to Deploy "      // note that it is message "" not message: ""
                 ok "Done"
                 parameters{
                     choice(name: "ENV",choices:["Dev","Stage","Prob"], description: "")
