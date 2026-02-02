@@ -54,7 +54,7 @@ pipeline{
             steps{
 
                 script{
-                    env.ENV=input message: "To Deploy in ", ok "Done", parameters: [choice(name: "ENV",choices:["Dev","Stage","Prob"], description: "")]
+                    env.ENV=input message: "To Deploy in ", ok "Done", parameters: [choice(name: "one",choices:["Dev","Stage","Prob"], description: "")]
                 }
                 echo "Deploying to Env ${ENV} and Version"
             }
