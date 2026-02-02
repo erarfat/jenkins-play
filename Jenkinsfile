@@ -25,11 +25,7 @@ pipeline{
         }
 
         stage("Build"){
-            // when{
-            //     expression{
-            //         params.Check
-            //     }
-            // }
+
             steps{
                 script {
                     gv.build()
@@ -45,5 +41,20 @@ pipeline{
                }
             }
             }
+        
+        stage("Deploy"){
+            input {
+                message "Enter To which ENV to Deploy "      // note that it is message "" not message: ""
+                ok "Done"
+                parameters{
+                    choice(name: "ENV",choices:["Dev","Stage","Prob"], description: "")
+                    choice(name: "Ver",choices:["v0.1","v0.2","v0.3"], description: ""  )
+                }
+            }
+            steps{
+                echo "Deploying to Env ${ENV} and Version ${Ver}"
+            }
+        }
+
         }
     }
