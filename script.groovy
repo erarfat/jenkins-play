@@ -6,7 +6,6 @@ def test() {
     if (params.Check){
         echo "Groovy Script load all parameters which is there in pipeline "
     }
-    echo "Groovy Script load all parameters which is there in pipeline "
     echo "Test version --- ${params.Version}"
 }
 
