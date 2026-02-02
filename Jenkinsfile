@@ -6,7 +6,7 @@ pipeline{
         buildDiscarder(
             logRotator(
                 numToKeepStr: '10',     // keep last 10 builds
-                daysToKeepStr: '15'     // or 15 days
+                daysToKeepStr: '1'     // or 15 days
             )
         )
     }
