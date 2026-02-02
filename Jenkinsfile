@@ -55,7 +55,7 @@ pipeline{
                 script{
                     env.ENV=input message: "To Deploy in ", ok "Done", parameters: [choice(name: "ENV",choices:["Dev","Stage","Prob"], description: "")]
                 }
-                echo "Deploying to Env ${ENV}}"
+                // echo "Deploying to Env ${ENV}}"
             }
         }
 
