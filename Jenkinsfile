@@ -31,7 +31,7 @@ pipeline{
         stage("Repo push"){
             steps{
                 script{
-                    withCredentials([usernamePassword(credentialId: "nexus", passwordVariable: "PASS", usernameVariable: "USER")]){
+                    withCredentials([usernamePassword(credentialsId: "nexus", passwordVariable: "PASS", usernameVariable: "USER")]){
                         sh 'docker build -t 43.205.240.167:8083/java-app-v3 .'
                         sh 'docker login 43.205.240.167:8083 -u $USER -p $PASS'
                         sh 'docker push 43.205.240.167:8083/java-app-v3'
