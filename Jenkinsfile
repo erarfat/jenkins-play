@@ -43,7 +43,7 @@ pipeline {
 
                     withVault(
                         vaultSecrets: [[
-                            path: 'secret/data/nexus',
+                            path: 'secret/nexus',
                             secretValues: [
                                 [envVar: 'NEXUS_USER', vaultKey: 'username'],
                                 [envVar: 'NEXUS_PASS', vaultKey: 'password']
