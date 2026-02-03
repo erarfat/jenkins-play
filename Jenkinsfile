@@ -32,9 +32,7 @@ pipeline{
             steps{
                 script{
                     withCredentials([usernamePassword(credentialsId: "nexus", passwordVariable: "PASS", usernameVariable: "USER")]){
-                        sh 'docker build -t 43.205.240.167:8083/java-app-v3 .'
-                        sh 'docker login 43.205.240.167:8083 -u $USER -p $PASS'
-                        sh 'docker push 43.205.240.167:8083/java-app-v3'
+                        gv.Push()
                     }
                 }
             }
