@@ -4,6 +4,7 @@ def BuildJar(){
     sh 'mvn package'
 }
 def Test(){
+    echo "Test Started"
     sh 'mvn test'
 }
 return this 

@@ -19,11 +19,12 @@ pipeline{
                 }
             }
         }
+
         stage{
             steps{
                 script{
-                gv.Test()
-            }
+                    gv.Test()
+                }
             }
         }
     }
