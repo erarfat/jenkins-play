@@ -20,7 +20,7 @@ pipeline{
             }
         }
 
-        stage{
+        stage("Test"){
             steps{
                 script{
                     gv.Test()
