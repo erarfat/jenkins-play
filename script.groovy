@@ -11,7 +11,7 @@ def Push(){
     echo "Pushing To Repo"
                         withCredentials([usernamePassword(credentialsId: "nexus", passwordVariable: "PASS", usernameVariable: "USER")]){
                          sh 'docker build -t 43.205.240.167:8083/java-app-v5 .'
-                         sh 'docker login 43.205.240.167:8083 -u $user -p $pass'
+                         sh 'docker login 43.205.240.167:8083 -u $USER -p $PASS'
                          sh 'docker push 43.205.240.167:8083/java-app-v5'
                      }  
 }
