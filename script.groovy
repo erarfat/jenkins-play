@@ -7,7 +7,7 @@ def Test(){
     echo "Test Started"
     sh 'mvn test'
 }
-def Push(String user, String pass){
+def Push(){
     echo "Pushing To Repo"
                         withCredentials([usernamePassword(credentialsId: "nexus", passwordVariable: "PASS", usernameVariable: "USER")]){
                          sh 'docker build -t 43.205.240.167:8083/java-app-v5 .'
